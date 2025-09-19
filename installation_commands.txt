@@ -1,0 +1,28 @@
+wsl --install -d Ubuntu
+wsl
+
+
+whoami
+uname -a
+
+To install Docker
+
+# Update packages
+sudo apt update && sudo apt upgrade -y
+
+# Install Docker
+sudo apt install docker.io -y
+
+# Start and enable service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Verify installation
+docker --version
+sudo docker run hello-world
+
+#to build an image
+docker build -t react-training-app .
+
+#to run a container from the image above
+docker run -d -p 3000:3000 react-training-app
